@@ -53,11 +53,11 @@ export default function App() {
     const result = alcoolPrice / gasolinePrice
     if (result < 0.7) {
       setWhichFuelIsTheBest(true)
-      setResultText('ALCOOL É A MELHOR OPÇÃO MEU FI!!!')
+      setResultText('ALCOOL É A MELHOR OPÇÃO MEU TRUTA!!!')
     }
     else if (result >= 0.7) {
       setWhichFuelIsTheBest(false)
-      setResultText('GASOLINA É A MELHOR OPÇÃO MEU FI!!!')
+      setResultText('GASOLINA É A MELHOR OPÇÃO MEU TRUTA!!!')
     }
     else {
       showToastError('ERRO!!! Digite valores válidos!!!', 'Erro ao realizar a conta!')
