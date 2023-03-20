@@ -11,6 +11,7 @@ import {
   ContainerResult,
   ResultText,
 } from './components.js';
+import ErrorImage from './assets/error.png'
 import Alcool from './assets/alcool.webp'
 import Gasoline from './assets/gasoline.png'
 import GasolineIsBest from './assets/gasolineIsBest.jpg'
@@ -61,8 +62,8 @@ export default function App() {
     }
     else {
       showToastError('ERRO!!! Digite valores válidos!!!', 'Erro ao realizar a conta!')
-      setWhichFuelIsTheBest(null)
-      setResultText('ERRO!!! Digite valores válidos!!!')
+      setWhichFuelIsTheBest('error')
+      setResultText('ERRO!!! ESSE RESULTADO É FULMINANTE MEU TRUTA!!!')
     }
   }
 
@@ -98,8 +99,11 @@ export default function App() {
       <ContainerResult>
         <ResultText>{resultText}</ResultText>
         <Image style={{height: 300, width: 400}} 
-          source={whichFuelIsTheBest && AlcoolIsBest || 
-            whichFuelIsTheBest === false && GasolineIsBest} 
+          source={
+            whichFuelIsTheBest === 'error' && ErrorImage ||
+            whichFuelIsTheBest && AlcoolIsBest || 
+            whichFuelIsTheBest === false && GasolineIsBest            
+          } 
         />
       </ContainerResult>
       <Toast config={toastConfig} />
